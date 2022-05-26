@@ -1,0 +1,27 @@
+using System;
+
+namespace ConsoleApp31
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            int currNumbercopy = number;
+            int sum = 0;
+            while (currNumbercopy>0)
+            {
+            int factoriel = 1;
+                int currNumber = currNumbercopy % 10;
+                currNumbercopy /= 10;
+
+            for (int i = currNumber; i > 0; i--)
+            {
+                 factoriel *= i;
+            }
+            sum += factoriel;
+            }
+            Console.WriteLine(sum==number ? "yes": "no");
+        }
+    }
+}
