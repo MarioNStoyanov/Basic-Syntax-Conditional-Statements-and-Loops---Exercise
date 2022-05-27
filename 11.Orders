@@ -1,0 +1,33 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication59
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = int.Parse(Console.ReadLine());
+            double pricePerCapsule = 0 ;
+            int daysInMonth = 0;
+            int capsulesCount = 0;
+            double sum = 0;
+            double totalSum = 0;
+            for (int i = 1; i <= N; i++)
+            {
+                pricePerCapsule = double.Parse(Console.ReadLine());
+                daysInMonth = int.Parse(Console.ReadLine());
+                capsulesCount = int.Parse(Console.ReadLine());
+                sum = ((daysInMonth * capsulesCount) * pricePerCapsule);
+                Console.WriteLine($"The price for the coffee is: ${sum:f2}");
+                totalSum += sum;
+
+            }
+                Console.WriteLine($"Total: ${totalSum:F2}");
+
+
+        }
+    }
+}
