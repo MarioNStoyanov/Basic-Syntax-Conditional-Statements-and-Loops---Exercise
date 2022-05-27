@@ -1,0 +1,54 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication59
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int lostGames = int.Parse(Console.ReadLine());
+            double headsetPrice = double.Parse(Console.ReadLine());
+            double mousePrice = double.Parse(Console.ReadLine());
+            double keybordPrice = double.Parse(Console.ReadLine());
+            double displayPrice = double.Parse(Console.ReadLine());
+            int headsetCounter = 0;
+            int mouseCounter = 0;
+            int keybordCounter = 0;
+            int displayCounter = 0;
+
+
+            for (int i = 1; i <= lostGames; i++)
+            {
+                if ( i % 2 == 0)
+                {
+                    headsetCounter++;
+
+                }
+                 if ( i % 3 == 0)
+                {
+                    mouseCounter++;
+                }
+                 if (i % 2 == 0 && i % 3 == 0)
+                {
+                    keybordCounter++;
+                    if (keybordCounter%2==0)
+                    {
+                        displayCounter++;
+                    }
+                }
+
+            }
+            double headsetSum = headsetCounter * headsetPrice;
+            double mouseSum = mouseCounter * mousePrice;
+            double keybordSum = keybordCounter * keybordPrice;
+            double displaySum = displayCounter * displayPrice;
+            double totalSum = headsetSum + mouseSum + keybordSum + displaySum;
+            Console.WriteLine($"Rage expenses: {totalSum:F2} lv.");
+
+
+        }
+    }
+}
