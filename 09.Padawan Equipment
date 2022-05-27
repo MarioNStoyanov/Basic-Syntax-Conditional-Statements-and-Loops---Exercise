@@ -1,0 +1,36 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication59
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double money = double.Parse(Console.ReadLine());
+            int students = int.Parse(Console.ReadLine());
+            double lightsaberPrice = double.Parse(Console.ReadLine());
+            double robePrice = double.Parse(Console.ReadLine());
+            double beltPrice = double.Parse(Console.ReadLine());
+            double moreSaber = Math.Ceiling(students * 0.1);
+
+            double lightsaberPriceSum = (students + moreSaber) * lightsaberPrice;
+            double robePriceSum = students * robePrice;
+            double freebelts = students / 6;
+            double beltPriceSum = beltPrice * (students- freebelts);
+            double totalSum = lightsaberPriceSum + robePriceSum + beltPriceSum;
+            if (money>=totalSum)
+            {
+                Console.WriteLine($"The money is enough - it would cost {totalSum:F2}" +
+                    $"lv.");
+            }
+            else
+            {
+                Console.WriteLine($"John will need {totalSum-money:F2}lv more.");
+            }
+         
+        }
+    }
+}
